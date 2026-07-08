@@ -10,5 +10,5 @@ To develop a predictive model using referral data to analyze patterns, identify 
 
 ## Data Flow
 The usual flow is:
-1. Leakage check.py validate the input data and optimization model to detect any data leakage or inconsistencies before analysis.
+1. 'Leakage check.py' validate the input data and optimization model to detect any data leakage or inconsistencies before analysis.
 2. 
