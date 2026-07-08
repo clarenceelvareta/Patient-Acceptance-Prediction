@@ -1,4 +1,5 @@
 # Patient-Acceptance-Prediction
+This project develops machine learning models to predict whether patients referred to the Agency for Integrated Care (AIC) are likely to accept community care services. The models identify key factors influencing patient acceptance and provide decision support for referral planning and healthcare resource allocation.
 
 ## Problem Statement
 To develop a predictive model using referral data to analyze patterns, identify key factors and generate actionable insights for effective decision-making
@@ -9,13 +10,22 @@ To develop a predictive model using referral data to analyze patterns, identify 
 - Which factors in patients that utilize community care delay the need for residential care
 
 ## Data Flow
-1. `Leakage check.py`
-   - validate the input data and optimization model to detect any data leakage or inconsistencies before analysis.
-2. `Filtering.py`
-   - remove invalid or irrelevant records and retain only feasible vessels, weather scenarios, and scheduling information required for optimization.
-3. `Filtering test.py`
-   - Execute the optimization model under multiple weather scenarios.
-   - Evaluate vessel schedules, total operational cost, berth utilization, and Just-in-Time (JIT) arrival performance.
+1. `leakage_check.py`
+   - Detects potential data leakage by ensuring no target information is unintentionally included in the training features.
+2. `filtering.py`
+   - Cleans the referral dataset by removing invalid records, handling missing values, and selecting relevant patient information.
+3. `filtering_test.py`
+   - Verifies that the filtering process preserves data integrity and produces a clean dataset for model training.
+4. Model Training
+   - Trains and evaluates multiple machine learning models using the processed dataset.
+5. Model Evaluation
+   - Compares model performance using accuracy, F1-score, and other evaluation metrics.
+
+## Results
+- Ensemble Model Accuracy: **66.9%**
+- Temporal Prediction Model Accuracy: **69.26%**
+- Identified the most influential factors affecting patient acceptance.
+- Developed a scalable decision-support tool for referral planning.
 
 ## Solution
 A predictive analytics pipeline was developed to help the Agency for Integrated Care (AIC) identify patients who are more likely to accept community care services and provide actionable insights for referral planning.
@@ -50,3 +60,14 @@ The solution consists of the following stages:
    - Built a temporal prediction model capable of identifying referral patterns and improving long-term prediction accuracy.
 
 The final system achieved an overall accuracy of **66.9%** for the ensemble model and **69.26%** for the temporal predictive model, providing AIC with a scalable decision-support tool for identifying patients who are more likely to accept community care services.
+
+## Technologies
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- CatBoost
+- LightGBM
+- Deep Kalman Filter
+- Matplotlib
