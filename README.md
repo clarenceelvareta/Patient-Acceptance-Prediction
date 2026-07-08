@@ -10,5 +10,10 @@ To develop a predictive model using referral data to analyze patterns, identify 
 
 ## Data Flow
 The usual flow is:
-1. 'Leakage check.py' validate the input data and optimization model to detect any data leakage or inconsistencies before analysis.
-2. 
+1. `Leakage check.py`
+   - validate the input data and optimization model to detect any data leakage or inconsistencies before analysis.
+2. `Filtering.py`
+   - remove invalid or irrelevant records and retain only feasible vessels, weather scenarios, and scheduling information required for optimization.
+3. `Filtering test.py`
+   - Execute the optimization model under multiple weather scenarios.
+   - Evaluate vessel schedules, total operational cost, berth utilization, and Just-in-Time (JIT) arrival performance.
